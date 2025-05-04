@@ -14,6 +14,12 @@ const Hero = () => {
     justifyContent: "center",
     alignItems: "center",
     padding: "20px",
+    [theme.breakpoints.up("xs")]: {
+      paddingTop: "100px",
+    },
+    [theme.breakpoints.up("md")]: {
+      paddingTop: "0px",
+    },
   }));
 
   const StyledImg = styled("img")(() => ({
@@ -29,7 +35,12 @@ const Hero = () => {
     <>
       <StyledHero>
         <Container maxWidth="lg">
-          <Grid container spacing={4} alignItems="center" justifyContent="center">
+          <Grid
+            container
+            spacing={4}
+            alignItems="center"
+            justifyContent="center"
+          >
             <Grid item xs={12} md={4}>
               <Box position="relative" width="100%" height="auto">
                 <Box position="absolute" width="150%" top={-100} right={0}>
@@ -38,7 +49,7 @@ const Hero = () => {
 
                 <Box zIndex={99} position="relative">
                   <StyledImg src={Avatar} alt="Marcelo L Freitas" zIndex />
-                  </Box>
+                </Box>
               </Box>
             </Grid>
 
@@ -74,15 +85,23 @@ const Hero = () => {
                 I'm a Front End Developer
               </Typography>
 
-              <Grid container spacing={2} marginTop={3} justifyContent="center" pt={3}>
+              <Grid container spacing={2} marginTop={3} justifyContent="center">
                 <Grid item>
-                  <Button variant="contained" color="primary" startIcon={<DownloadIcon />}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<DownloadIcon />}
+                  >
                     Download CV
                   </Button>
                 </Grid>
 
                 <Grid item>
-                  <Button variant="contained" color="secondary" startIcon={<MailOutlineIcon />}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    startIcon={<MailOutlineIcon />}
+                  >
                     Contact Me
                   </Button>
                 </Grid>
